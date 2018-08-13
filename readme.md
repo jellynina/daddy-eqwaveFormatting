@@ -4,6 +4,7 @@
 Make the `RawData.txt` into one set one line formate.
 
 需要安裝 [nodeJS](https://nodejs.org/en/)
+使用到node fs
 
 ```
 $ node index.js
