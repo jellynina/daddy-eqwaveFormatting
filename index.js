@@ -1,5 +1,5 @@
 var fs = require("fs");
-var text = fs.readFileSync("./UD_RawData.txt").toString('utf-8');
+var text = fs.readFileSync("./NS_RawData.txt").toString('utf-8');
 text = text.replace(/\r\n/gi, '\r\n');
 var textByLine = text.split("\r\n");
 var finalArray = [];
@@ -14,7 +14,7 @@ for (i in textByLine) {
   finalArray = finalArray.concat(buffA);
 }
 
-var newFile = fs.createWriteStream('SL_UD_RawData.txt');
+var newFile = fs.createWriteStream('SL_NS_RawData.txt');
 
 newFile.on('error', function (err) { });
 finalArray.forEach(function (v) {
