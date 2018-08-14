@@ -3,10 +3,16 @@ var text = fs.readFileSync("./NS_RawData.txt").toString('utf-8');
 text = text.replace(/\r\n/gi, '\r\n');
 var textByLine = text.split("\r\n");
 var finalArray = [];
+console.log(textByLine[683]);
 for (i in textByLine) {
   var tempString = textByLine[i].toString('utf-8').slice(2);
   var buffA = tempString.split(" ");
-  buffA = buffA.filter(word => word.length > 1);
+  buffA = buffA.filter(data => data.toString('utf-8').length != 0);
+  if(buffA.length != 8) {
+    console.log(`something worng about line ${i}`);
+    console.log(`The array is ${buffA}`);
+    console.log(`======`);
+  }
   for(j in buffA){
     buffA[j] = buffA[j].toString('utf-8').replace(' ', '');
   }
